@@ -1,29 +1,22 @@
-<!-- -------------------------------- -->
-<!-- ------- Marker Animation ------- -->
-<!-- -------------------------------- -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>Add a default marker</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-<style>
-  body { margin: 0; padding: 0; }
-  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-
-.map-overlay {
-  position: absolute;
-  left: 0;
-  padding: 10px;
-}
- 
-</style>
+    <meta charset="utf-8" />
+    <title>Bus route 4</title>
+    <script src="http://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script> 
+    <link href="http://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet"/>
+    <style>
+        body {margin: 0; padding: 0;}
+        #map {position: absolute; top: 0; bottom: 0; width: 100%;}
+        .map-overlay{
+            position: absolute;
+            left: 0;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
+
 <div id="map"></div>
 
 <div class="map-overlay top">
@@ -33,10 +26,9 @@
 </div>
  
 <script>
-  // api token 
+  
   mapboxgl.accessToken = 'pk.eyJ1IjoiZWdlcnNhY2siLCJhIjoiY2t6Zm5xcWRmM2puYjJvcDRhdWkxZ3AwcSJ9.U7_QFW3y2Cz5kbU-CHLWIA';
 
-  // map instance
   var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -44,7 +36,6 @@
       zoom: 14
   });
 
-  // map marker
   var marker = new mapboxgl.Marker()
       .setLngLat([-71.092761, 42.357575])
       .addTo(map);
@@ -64,7 +55,6 @@
       [-71.118625, 42.374863]
   ];
 
-  // animate marker
   let counter = 0;
 
   var walker = function(){
